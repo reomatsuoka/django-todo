@@ -3,7 +3,7 @@ from django.views.generic import View
 from .models import Todo
 
 class IndexView(View):
-  def get(self, request, *args, **kwargs):
+  def get(self,request,*args,**kwargs):
     todo_data = Todo.objects.order_by('deadline')
 
     return render(request,'app/index.html',{
